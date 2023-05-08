@@ -21,8 +21,7 @@ class Solution:
        output = ListNode()
        stats = True
        while stats:            
-            while (list1.val <= list2.val):
-                print("while 1: ", list1.val, list2.val)
+            while (list1.val <= list2.val):                
                 last = Solution.last_node(output)
                 last.next = ListNode(list1.val)
                 list1 = list1.next
@@ -34,8 +33,7 @@ class Solution:
                         list2 = list2.next                                                              
                     break
                 
-            while (stats == True) and (list2.val <= list1.val): 
-                print("while 2: ", list2.val, list1.val)
+            while (stats == True) and (list2.val <= list1.val):                 
                 last = Solution.last_node(output)
                 last.next = ListNode(list2.val)                
                 list2 = list2.next
