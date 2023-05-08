@@ -22,6 +22,7 @@ class Solution:
        stats = True
        while stats:            
             while (list1.val <= list2.val):
+                print("while 1: ", list1.val, list2.val)
                 last = Solution.last_node(output)
                 last.next = ListNode(list1.val)
                 list1 = list1.next
@@ -30,30 +31,28 @@ class Solution:
                     while list2 is not None:
                         last = Solution.last_node(output)
                         last.next = ListNode(list2.val)
-                        list2 = list2.next
-                        print(stats)                                               
+                        list2 = list2.next                                                              
                     break
                 
             while (stats == True) and (list2.val <= list1.val): 
+                print("while 2: ", list2.val, list1.val)
                 last = Solution.last_node(output)
-                last.next = ListNode(list2.val)
+                last.next = ListNode(list2.val)                
                 list2 = list2.next
                 if list2 is None:
                     stats = False
                     while list1 is not None:
                         last = Solution.last_node(output)
                         last.next = ListNode(list1.val)
-                        list1 = list1.next
-                        print(stats)
+                        list1 = list1.next                        
                     break
        output = output.next
        return output     
 
-list1 = ListNode(1)
-list2 = ListNode(2)
+list1 = ListNode(1, ListNode(2, ListNode(3)))
+list2 = ListNode(1, ListNode(3, ListNode(4)))
 s = Solution()
 output = s.mergeTwoLists(list1=list1, list2=list2)
-print(output)
 
 r = []
 while output is not None:
