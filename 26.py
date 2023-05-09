@@ -22,8 +22,6 @@ class Solution:
         n = len(nums) -1
         dummy = []        
         while i <= n:
-            print(nums)
-            print(dummy)
             if nums[i] not in dummy:                
                 dummy.append(nums[i])                           
                 i += 1
