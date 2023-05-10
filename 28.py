@@ -11,7 +11,7 @@ class Solution:
     
 
 haystack = "sadbutsad"
-needle = "ssd"    
+needle = "sad"    
 
 s = Solution()
 result = s.strStr(haystack, needle)
