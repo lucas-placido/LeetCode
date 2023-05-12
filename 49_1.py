@@ -12,6 +12,7 @@ class Solution:
         return list(result.values())
 
 strs = ["eat","tea","tan","ate","nat","bat"]
+
 s = Solution()
 result = s.groupAnagrams(strs)
 print(result)
