@@ -3,6 +3,7 @@ import importlib
 
 anagram = importlib.import_module('242')
 fPairs = importlib.import_module(name='532')
+majority = importlib.import_module('169')
 
 class Testes(unittest.TestCase):
     def test_anagram(self):
@@ -16,3 +17,9 @@ class Testes(unittest.TestCase):
         self.assertEqual(fPairs.Solution().findPairs([1,2,3,4,5], 1), 4)
         self.assertEqual(fPairs.Solution().findPairs([1,3,1,5,4], 0), 1)
         self.assertEqual(fPairs.Solution().findPairs([], 0), 0)
+
+    def test_majorityElement(self):
+        self.assertEqual(majority.Solution().majorityElement([3,2,3]), 3)
+        self.assertEqual(majority.Solution().majorityElement([2,2,1,1,1,2,2]), 2)
+        self.assertEqual(majority.Solution().majorityElement([6,5,5]), 5)
+        self.assertEqual(majority.Solution().majorityElement([]), None)
