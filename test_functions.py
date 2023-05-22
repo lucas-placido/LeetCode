@@ -4,6 +4,7 @@ import importlib
 anagram = importlib.import_module('242')
 fPairs = importlib.import_module(name='532')
 majority = importlib.import_module('169')
+longest = importlib.import_module('720')
 
 class Testes(unittest.TestCase):
     def test_anagram(self):
@@ -23,3 +24,8 @@ class Testes(unittest.TestCase):
         self.assertEqual(majority.Solution().majorityElement([2,2,1,1,1,2,2]), 2)
         self.assertEqual(majority.Solution().majorityElement([6,5,5]), 5)
         self.assertEqual(majority.Solution().majorityElement([]), None)
+
+    def test_longestWord(self):
+        self.assertEqual(longest.Solution().longestWord(["w","wo","wor","worl","world"]), 'world')
+        self.assertEqual(longest.Solution().longestWord(["a","banana","app","appl","ap","apply","apple"]), 'apple')
+        self.assertEqual(longest.Solution().longestWord(["yo","ew","fc","zrc","yodn","fcm","qm","qmo","fcmz","z","ewq","yod","ewqz","y"]), 'yodn')
