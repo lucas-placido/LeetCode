@@ -1,0 +1,25 @@
+WITH CATEGORIES AS (
+    SELECT 'Low Salary' AS CATEGORY 
+    UNION
+    SELECT 'Average Salary' AS CATEGORY
+    UNION
+    SELECT 'High Salary' AS CATEGORY
+)
+
+SELECT 
+C.CATEGORY AS category,
+COUNT(AC.CATEGORY) AS accounts_count
+FROM (
+    SELECT
+        ACCOUNT_ID,
+        INCOME,
+        CASE
+            WHEN INCOME < 20000 THEN "Low Salary"
+            WHEN INCOME > 50000 THEN "High Salary"
+            ELSE "Average Salary"
+        END AS CATEGORY
+    FROM ACCOUNTS) AC
+RIGHT JOIN CATEGORIES C
+    ON AC.CATEGORY = C.CATEGORY
+GROUP BY C.CATEGORY
+ORDER BY ACCOUNTS_COUNT DESC
